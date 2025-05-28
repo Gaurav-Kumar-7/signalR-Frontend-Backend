@@ -1,0 +1,18 @@
+<div>
+    <h2>Broadcast Messages</h2>
+    
+    <div *ngIf="broadcasts.length > 0; else noData">
+      <ul>
+        <li *ngFor="let broadcast of broadcasts">
+          <strong>{{ broadcast.timestamp | date:'short' }}</strong> - 
+          <span>{{ broadcast.message }}</span> <br>
+          <span><em>from IP: {{ broadcast.ipAddress }}</em></span>
+        </li>
+      </ul>
+    </div>
+  
+    <ng-template #noData>
+      <p>No broadcasts found.</p>
+    </ng-template>
+  </div>
+  

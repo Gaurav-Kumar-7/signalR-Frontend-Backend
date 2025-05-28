@@ -1,0 +1,47 @@
+<div class="login-wrapper">
+  <div class="login-form">
+    <h2>Store</h2>
+
+    <select [(ngModel)]="email">
+      <option value="" disabled selected>Select your store</option>
+      <option value="Chicago-store&#64;musicarts">Chicago-store&#64;musicarts</option>
+      <option value="Houston-store&#64;musicarts">Houston-store&#64;musicarts</option>
+      <option value="Dallas-store&#64;musicarts">Dallas-store&#64;musicarts</option>
+      <option value="Philadelphia-store&#64;musicarts">Philadelphia-store&#64;musicarts</option>
+    </select>    
+
+    <button (click)="connect()">Connect</button>
+
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </div>
+
+  <div class="broadcasts-panel" *ngIf="isConnected">
+    <div *ngIf="!isOnline" class="offline-banner">
+      ⚠️ You are offline. Please check your internet connection.
+    </div>
+    <h2>Connected to Hub</h2>
+    <div *ngIf="broadcasts.length > 0; else noData" class="table-container">
+      <table class="broadcast-table">
+        <thead>
+          <tr>
+            <th>Client Timestamp</th>
+            <th>Server Timestamp</th>
+            <th>Message</th>
+            <th>IP Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let broadcast of broadcasts">
+            <td [title]="broadcast.clientTimestamp">{{ broadcast.clientTimestamp }}</td>
+            <td [title]="broadcast.serverTimestamp">{{ broadcast.serverTimestamp }}</td>
+            <td [title]="broadcast.message" class="truncate">{{ broadcast.message }}</td>
+            <td [title]="broadcast.ipAddress">{{ broadcast.ipAddress }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>    
+    <ng-template #noData>
+      <p>No broadcasts found.</p>
+    </ng-template>
+  </div>
+</div>

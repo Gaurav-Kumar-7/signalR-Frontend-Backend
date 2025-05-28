@@ -1,0 +1,21 @@
+<div class="broadcast-container">
+  <h2>Broadcast Message</h2>
+  <input
+    type="email"
+    placeholder="Enter email"
+    [(ngModel)]="email"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <input
+    type="text"
+    placeholder="Enter message"
+    [(ngModel)]="message"
+    [ngModelOptions]="{ standalone: true }"
+  />
+
+  <button (click)="sendData()">Send</button>
+  <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>

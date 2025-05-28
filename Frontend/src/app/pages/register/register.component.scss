@@ -1,0 +1,92 @@
+.login-wrapper {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.login-form,
+.broadcasts-panel {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+input {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-top: 1rem;
+}
+
+.offline-banner {
+  background-color: #ffcdd2;
+  color: #c62828;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+select {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.broadcast-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: white;
+  border: 1px solid #ddd;
+}
+
+.broadcast-table th,
+.broadcast-table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: left;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.broadcast-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.broadcast-table td.truncate {
+  cursor: pointer;
+}
+
+.broadcast-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+
+

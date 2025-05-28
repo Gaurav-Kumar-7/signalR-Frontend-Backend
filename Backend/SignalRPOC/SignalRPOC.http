@@ -1,0 +1,6 @@
+@SignalRPOC_HostAddress = http://localhost:5096
+
+GET {{SignalRPOC_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
